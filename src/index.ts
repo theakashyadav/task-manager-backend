@@ -16,6 +16,10 @@ app.use('/api/tasks', taskRoutes);
 const PORT = process.env.PORT || 4000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/task-manager';
 
+app.listen(() => {
+  console.log("Listening at port 4000");
+})
+
 mongoose.connect(MONGODB_URI)
   .then(()=> {
     console.log('Connected to MongoDB');
